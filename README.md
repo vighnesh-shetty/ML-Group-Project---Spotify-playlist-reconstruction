@@ -1,0 +1,2 @@
+# ML-Group-Project---Spotify-playlist-reconstruction
+In this project, we analyzed Spotify audio features (danceability, energy, tempo, valence) to predict user preferences and classify songs using multiple supervised learning models—Logistic Regression, KNN, SVM, and Decision Trees. We also designed a hybrid recommendation system that balances individual taste with shared family listening patterns.
