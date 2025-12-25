@@ -159,7 +159,7 @@ Upload mixed_playlist.csv to the project directory
 
 Open the Jupyter notebook:
 ```bash
- Spotify_machine_learning_project.ipynb
+ Spotify machine learning project  Task1 .ipynb
 ```
 Run all cells from top to bottom
 ---
