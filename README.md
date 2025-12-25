@@ -1,23 +1,32 @@
 # ML-Group-Project---Spotify-playlist-reconstruction
 In this project, we analyzed Spotify audio features (danceability, energy, tempo, valence) to predict user preferences and classify songs using multiple supervised learning models—Logistic Regression, KNN, SVM, and Decision Trees. We also designed a hybrid recommendation system that balances individual taste with shared family listening patterns.
 
+---
 
-This project applies machine learning and data analytics to build a hybrid music recommendation system using Spotify listening data.
-It combines content-based filtering and collaborative learning to support personalized decision-making in a multi-user (family) environment.
+📌 Project Context
 
+After a simulated hacker attack on Spotify servers, only one **mixed playlist** per family account remained, containing songs from all users and years.  
+Partial information about which user and which year each song belongs to was recovered, but some songs remain unlabeled.
+
+The goal of this project is to:
+- Reconstruct missing playlist information using machine learning
+- Design a recommendation system suitable for Spotify family accounts
+
+---
 🎯 Project Objectives
 
-Explore and clean Spotify audio feature data
+ ```bash
 
-Train supervised ML models to predict user preferences
-
-Design a hybrid recommendation system
-
-Evaluate recommendation quality using ranking metrics
-
-Apply real-world AI concepts taught in the course
+- Explore and clean Spotify audio feature data
+- Train supervised ML models to predict user preferences
+- Design a hybrid recommendation system
+- Evaluate recommendation quality using ranking metrics
+- Apply real-world AI concepts taught in the course
+```
+---
 
 🧠 Project Structure
+ ```bash
 moneywiz-crm/
 │
 ├── data/
@@ -31,79 +40,39 @@ moneywiz-crm/
 │
 ├── README.md
 └── requirements.txt
+```
 
-📊 Dataset Description
-
-The dataset includes Spotify track-level information:
-
-Audio Features
-
-danceability
-
-energy
-
-loudness
-
-speechiness
-
-acousticness
-
-instrumentalness
-
-liveness
-
-valence
-
-tempo
-
-Metadata
-
-popularity
-
-year
-
-user_id
-
-song_id
-
-Target Variable
-
-liked → 1 if the user listened to the song, 0 otherwise
-
+---
 🔍 Task 1 – Data Exploration & Supervised Learning
+
 Steps Performed
-
-Data cleaning (missing values, duplicates)
-
-Feature selection
-
-Standardization using StandardScaler
-
-Train–test split (80/20)
-
-Model training and evaluation
+ ```bash
+- Data cleaning (missing values, duplicates)
+- Feature selection
+- Standardization using StandardScaler
+- Train–test split (80/20)
+- Model training and evaluation
+```
 
 Models Used
-
-Logistic Regression
-
-K-Nearest Neighbors (KNN)
-
-Support Vector Machine (SVM)
-
+```bash
+- Logistic Regression
+- K-Nearest Neighbors (KNN)
+- Support Vector Machine (SVM)
+```
 Evaluation Metrics
+```bash
+- Accuracy
+- Precision
+- Recall
+- F1-score
+```
 
-Accuracy
-
-Precision
-
-Recall
-
-F1-score
-
+---
 🤖 Task 2 – Hybrid Recommendation System
-1️⃣ Content-Based Filtering
 
+1️⃣ Content-Based Filtering
+```bash
 Predicts how much a user will like a song based on its features.
 
 Input:
@@ -111,79 +80,97 @@ Audio features + metadata
 
 Model:
 Scikit-learn classifiers (Logistic Regression, KNN, SVM)
+```
 
 2️⃣ Collaborative Component
-
-Captures shared preferences across users:
-
-Songs listened to by multiple users get higher relevance.
-
-Simulates collaborative filtering without matrix factorization.
+```bash
+- Captures shared preferences across users:
+- Songs listened to by multiple users get higher relevance.
+- Simulates collaborative filtering without matrix factorization.
+```
 
 3️⃣ Hybrid Scoring
 
 Final recommendation score:
+ ```bash
 
 Hybrid Score = α × Content Score + (1 − α) × Collaborative Score
-
+```
 
 This allows:
+```bash
+- Cold-start handling
+- Personalized recommendations
+- Balanced exploration & exploitation
+```
 
-Cold-start handling
-
-Personalized recommendations
-
-Balanced exploration & exploitation
-
+---
 📈 Evaluation Strategy
 
 Temporal train–test split (past → future)
 
 Ranking-based evaluation:
+```bash
+- Precision@K
+- Recall@K
+- NDCG@K
+- Model tuning via GridSearchCV
+```
+---
+📊 Dataset Description
 
-Precision@K
+mixed_playlist.csv
 
-Recall@K
-
-NDCG@K
-
-Model tuning via GridSearchCV
-
-🧪 Technologies Used
-
-Python 3.x
-
-Pandas & NumPy
-
-Scikit-learn
-
-Jupyter Notebook / VS Code
-
-▶️ How to Run
-Option 1: Jupyter Notebook
-jupyter notebook
-
-
-Open:
-
-Spotify_machine_learning_project_Task1.ipynb
-
+⚠️ **Important:**  
+The dataset is **not included in this repository** and must be **uploaded manually** before running the notebook.
+ ```bash
+### Dataset Description
+- Total songs: 3,600
+- Labeled songs: 3,500 (user + year known)
+- Unlabeled songs: 100 (user and year missing)
+- Features include audio characteristics and popularity-related metadata
+```
+---
 📌 Key Learnings
+ ```bash
 
-How ML supports personalized decision-making
-
-Trade-offs between content-based and collaborative filtering
-
-Importance of feature engineering in recommender systems
-
-Application of supervised ML to real-world business problems
-
+- How ML supports personalized decision-making
+- Trade-offs between content-based and collaborative filtering
+- Importance of feature engineering in recommender systems
+- Application of supervised ML to real-world business problems
+```
+---
 🚀 Future Enhancements
+ ```bash
 
-Matrix factorization (ALS / SVD)
+- Matrix factorization (ALS / SVD)
+- Deep learning recommender models
+- Real-time recommendation API
+- Dashboard visualization
+```
+---
 
-Deep learning recommender models
+## How to Run
 
-Real-time recommendation API
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/ML-Group-Project---Spotify-playlist-reconstruction.git
+Upload mixed_playlist.csv to the project directory
 
-Dashboard visualization (Streamlit)
+Open the Jupyter notebook:
+```bash
+ Spotify_machine_learning_project.ipynb
+```
+Run all cells from top to bottom
+---
+Tools & Technologies
+ ```bash
+Python
+Jupyter Notebook
+Pandas, NumPy
+Scikit-learn
+Machine Learning (Classification, Evaluation)
+```
+---
+Disclaimer
+This project is for academic purposes only and is not affiliated with or endorsed by Spotify.
